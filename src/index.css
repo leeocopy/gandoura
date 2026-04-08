@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* ============================================================
+   BEHJA GANDOURA — GLOBAL DESIGN SYSTEM
+   Vibe: Minimalist Moroccan Luxury
+   ============================================================ */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ---------- Custom Arabic Font ---------- */
+@font-face {
+  font-family: 'Palestine';
+  src: url('/fonts/Palestine-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- CSS Custom Properties (Design Tokens) ---------- */
+:root {
+  --color-bg:        #FCFCFC;
+  --color-text:      #121212;
+  --color-muted:     #666666;
+  --color-border:    #E5E5E5;
+  --color-accent:    #2D3A2F;
+
+  --font-serif:      'Palestine', 'Playfair Display', Georgia, serif;
+  --font-sans:       'Palestine', 'Inter', -apple-system, sans-serif;
+
+  --nav-height:      80px;
+  --max-width:       1280px;
+}
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(45, 58, 47, 0.15);
+  color: #121212;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 18px; /* Global bump from 16px */
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ---------- Tailwind v4 Theme Extension ---------- */
+@theme {
+  --color-behja-bg:      #FCFCFC;
+  --color-behja-text:    #121212;
+  --color-behja-muted:   #666666;
+  --color-behja-border:  #E5E5E5;
+  --color-behja-accent:  #2D3A2F;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', -apple-system, sans-serif;
+}
+
+/* ---------- Button Base ---------- */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border: 1.5px solid var(--color-text);
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 14px; /* Global bump from 11px */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+  /* Removed uppercase & letter-spacing for global Arabic compatibility */
+}
+
+.btn-outline:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+  transform: translateY(-1px);
+}
+
+/* ---------- Mobile Layout "Mnedm" (Organized) ---------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Add more breathing room between sections on mobile */
+  section + section {
+    margin-top: 40px;
+  }
+  
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 18px 24px;
+    font-size: 15px;
+  }
+}
+
+/* ---------- Selection color fix for dark mode (if any) ---------- */
+#root {
+  min-height: 100vh;
+}
