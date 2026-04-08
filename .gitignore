@@ -23,12 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-# Images & Assets from previous sessions
-*.png
-*.jpg
-*.jpeg
-*.webp
+# Assets from previous sessions to ignore
 tmp_backup
 antigravity_master_plan.md
 CORTEX_STEP_RECORDER_RECORDING.webp
 RECORDER_RECORDING.webp
+verify_*.webp
+*.otf
+!public/fonts/*.otf
